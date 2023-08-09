@@ -1,0 +1,26 @@
+body {
+  color: red;
+  background-color: black;
+}
+
+h1 {
+  color: red;
+  font-family: "Allerta Stencil", Roboto, sans-serif;
+}
+
+a {
+	color: red;
+}
+a:link {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
