@@ -1,0 +1,40 @@
+name: Deploy repo as web root
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - id: 'google-auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        service_account: 'sica-web-writer@awaylab.iam.gserviceaccount.com'
+        credentials_json: ${{ secrets.GCLOUD_JSON_KEY }}
+    - id: 'upload-files'
+      uses: 'google-github-actions/upload-cloud-storage@v1'
+      with:
+        path: '.'
+        destination: 'web-content.www.sica.ie'
+        parent: false
+
