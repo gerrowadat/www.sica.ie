@@ -11,6 +11,7 @@ h1 {
 a {
 	color: red;
 }
+
 a:link {
   color: red;
   background-color: transparent;
@@ -24,3 +25,7 @@ a:hover {
 }
 
 
+p {
+  font-family: Arial, Geneva, Helvetica;
+  color: #eb4034;
+}
