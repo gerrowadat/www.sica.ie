@@ -29,3 +29,10 @@ p {
   font-family: Arial, Geneva, Helvetica;
   color: #eb4034;
 }
+
+hr {
+  width: 50%;
+  height: 2px;
+  border-width: 0;
+  background-color: #eb4034
+}
